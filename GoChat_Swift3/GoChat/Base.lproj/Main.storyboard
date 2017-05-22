@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="naj-qq-L3Y">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Log In View Controller-->
+        <scene sceneID="Sdc-qA-8hh">
+            <objects>
+                <viewController storyboardIdentifier="LogInVC" id="naj-qq-L3Y" customClass="LogInViewController" customModule="GoChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O8k-6e-Oks"/>
+                        <viewControllerLayoutGuide type="bottom" id="TNB-Wf-E67"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2yQ-WG-RB5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lfn-qa-MGK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeu-3y-I6v">
+                                <rect key="frame" x="157" y="255" width="287" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="f7z-g0-hZP"/>
+                                    <constraint firstAttribute="width" constant="287" id="yec-UX-dJD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Login Anonymously">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAnonymouslyDidTapped:" destination="naj-qq-L3Y" eventType="touchUpInside" id="Jgy-vY-qVa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26B-vb-kfe">
+                                <rect key="frame" x="280" y="383" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sVD-mG-Ymh"/>
+                                    <constraint firstAttribute="width" constant="40" id="y0M-FR-5zM"/>
+                                </constraints>
+                                <state key="normal" image="googleButton.png"/>
+                                <connections>
+                                    <action selector="googleLoginDidTapped:" destination="naj-qq-L3Y" eventType="touchUpInside" id="wk3-oM-l0r"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="H3F-hD-0OG">
+                                <rect key="frame" x="157" y="331" width="287" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="Rfj-8N-rhL"/>
+                                    <constraint firstAttribute="height" constant="16" id="fHk-iN-KJh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H3F-hD-0OG" firstAttribute="top" secondItem="zeu-3y-I6v" secondAttribute="bottom" constant="36" id="2W2-hu-Heh"/>
+                            <constraint firstItem="26B-vb-kfe" firstAttribute="top" secondItem="H3F-hD-0OG" secondAttribute="bottom" constant="36" id="9JA-nV-8zb"/>
+                            <constraint firstAttribute="trailing" secondItem="Lfn-qa-MGK" secondAttribute="trailing" id="FHC-US-Cr3"/>
+                            <constraint firstItem="TNB-Wf-E67" firstAttribute="top" secondItem="Lfn-qa-MGK" secondAttribute="bottom" id="HqQ-ik-ph9"/>
+                            <constraint firstItem="zeu-3y-I6v" firstAttribute="centerX" secondItem="2yQ-WG-RB5" secondAttribute="centerX" id="K04-9H-fnJ"/>
+                            <constraint firstItem="Lfn-qa-MGK" firstAttribute="leading" secondItem="2yQ-WG-RB5" secondAttribute="leading" id="QUM-VS-MMG"/>
+                            <constraint firstItem="H3F-hD-0OG" firstAttribute="centerX" secondItem="2yQ-WG-RB5" secondAttribute="centerX" id="S8F-K4-Tu3"/>
+                            <constraint firstItem="TNB-Wf-E67" firstAttribute="top" secondItem="26B-vb-kfe" secondAttribute="bottom" constant="177" id="U8V-X9-Fhe"/>
+                            <constraint firstItem="Lfn-qa-MGK" firstAttribute="top" secondItem="2yQ-WG-RB5" secondAttribute="top" id="fHx-RK-jkJ"/>
+                            <constraint firstItem="26B-vb-kfe" firstAttribute="centerX" secondItem="2yQ-WG-RB5" secondAttribute="centerX" id="lVU-dB-Ra2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="anonymousButton" destination="zeu-3y-I6v" id="d90-71-bmg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jeR-BK-GSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="338"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="VMf-Y7-uZ8">
+            <objects>
+                <viewController id="jSw-Xg-kfY" customClass="ChatViewController" customModule="GoChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="11W-8J-Uzi"/>
+                        <viewControllerLayoutGuide type="bottom" id="9X2-zE-D8Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e1n-Nt-k1I">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UhJ-fQ-yNN">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="bUF-qB-DPH">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logoutDidTapped:" destination="jSw-Xg-kfY" id="BwO-8Z-JCL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgd-Gc-OMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="338"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EzV-XG-7yF">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="ki4-hJ-eNB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2pD-q5-fqB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14901960784313725" green="0.26666666666666666" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jSw-Xg-kfY" kind="relationship" relationship="rootViewController" id="mvf-jV-aak"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x96-CL-fU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207" y="338"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="OrLine.png" width="864" height="45"/>
+        <image name="backgroundPhoto.png" width="1125" height="2001"/>
+        <image name="googleButton.png" width="120" height="120"/>
+    </resources>
+</document>
