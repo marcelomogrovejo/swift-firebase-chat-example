@@ -9,7 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 
-class ChatViewController: JSQMessagesViewController {
+class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var messages = [JSQMessage]()
     
@@ -44,7 +44,11 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     override func didPressAccessoryButton(_ sender: UIButton!) {
-        print("didPressAccessoryButton")
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
@@ -67,6 +71,25 @@ class ChatViewController: JSQMessagesViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         return cell
+    }
+    
+    // MARK: UIImagePickerControllerDelegate and UINavigationControllerDelegate methods
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var photo: JSQPhotoMediaItem
+        
+        if let picture = info[UIImagePickerControllerEditedImage] as? UIImage {
+            photo = JSQPhotoMediaItem(image: picture)
+        } else if let picture = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            photo = JSQPhotoMediaItem(image: picture)
+        } else {
+            photo = JSQPhotoMediaItem(image: UIImage(named: "Google"))
+            print("Something went wrong")
+        }
+        messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: photo))
+        collectionView.reloadData()
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
