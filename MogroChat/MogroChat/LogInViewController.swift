@@ -9,7 +9,7 @@
 import UIKit
 import GoogleSignIn
 
-class LogInViewController: UIViewController, GIDSignInUIDelegate {
+class LogInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
     // MARK: Outlets
     
@@ -23,6 +23,7 @@ class LogInViewController: UIViewController, GIDSignInUIDelegate {
         
         GIDSignIn.sharedInstance().clientID = "1037327570432-4mo9378pmrp0gonf66rs2r45q5vmesta.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,14 +38,20 @@ class LogInViewController: UIViewController, GIDSignInUIDelegate {
     }
   
     @IBAction func googleLogIn(_ sender: Any) {
-        
         GIDSignIn.sharedInstance().signIn()
-        Helper.helper.googleLogIn()
-
     }
 
-    // MARK: GIDSignInUIDelegate methods
+    // MARK: GIDSignInDelegate methods
     
-    
-    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error == nil {
+            
+            print("Access token: \(user.authentication)")
+            
+            Helper.helper.googleLogIn(authentication: user.authentication)
+        } else {
+            print("\(error.localizedDescription)")
+        }
+    }
+        
 }

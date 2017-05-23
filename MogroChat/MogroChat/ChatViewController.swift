@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import JSQMessagesViewController
 
-class ChatViewController: UIViewController {
+class ChatViewController: JSQMessagesViewController {
 
+    var messages = [JSQMessage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.senderId = "1"
+        self.senderDisplayName = "Marcelo"
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,12 +28,45 @@ class ChatViewController: UIViewController {
     // MARK: Action methods
     
     @IBAction func logOut(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let logInViewController = storyboard.instantiateViewController(withIdentifier: "LogInVC") as! LogInViewController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = logInViewController
-
+        Helper.helper.logOut()
     }
-   
+    
+    // JSQMessagesViewController methods
+    
+    override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+        print("didPressSendButton")
+        print("\(text)")
+        
+        messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text))
+        print(messages)
+        
+        collectionView.reloadData()
+    }
+    
+    override func didPressAccessoryButton(_ sender: UIButton!) {
+        print("didPressAccessoryButton")
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
+        return messages[indexPath.item]
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
+        let bubbleFactory = JSQMessagesBubbleImageFactory()
+        return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.black)
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+        return nil
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
+        return cell
+    }
+    
 }

@@ -15,11 +15,10 @@
 		16A6C5A51ED3621200CFA1D9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6C5A41ED3621200CFA1D9 /* LogInViewController.swift */; };
 		16A6C5A71ED36CE700CFA1D9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6C5A61ED36CE700CFA1D9 /* ChatViewController.swift */; };
 		16A6C5A91ED37B1300CFA1D9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A6C5A81ED37B1300CFA1D9 /* Helper.swift */; };
-		5A8C00891CF5CAC5E7A87568 /* Pods_MogroChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E8F1A525A62AA64F3D2032 /* Pods_MogroChat.framework */; };
+		1EAB02686E98406DA25BC733 /* Pods_MogroChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BDC2452F6F90541A959971 /* Pods_MogroChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12E8F1A525A62AA64F3D2032 /* Pods_MogroChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MogroChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A6C58D1ED35D2B00CFA1D9 /* MogroChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MogroChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A6C5901ED35D2B00CFA1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16A6C5951ED35D2B00CFA1D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,8 +29,9 @@
 		16A6C5A41ED3621200CFA1D9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		16A6C5A61ED36CE700CFA1D9 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		16A6C5A81ED37B1300CFA1D9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		4AD0B45FA19546F3784C49AB /* Pods-MogroChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MogroChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-MogroChat/Pods-MogroChat.release.xcconfig"; sourceTree = "<group>"; };
-		5B6BEE4EC31C639CB86175DA /* Pods-MogroChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MogroChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MogroChat/Pods-MogroChat.debug.xcconfig"; sourceTree = "<group>"; };
+		572BF5453562D0E8072EA4DA /* Pods-MogroChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MogroChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MogroChat/Pods-MogroChat.debug.xcconfig"; sourceTree = "<group>"; };
+		92BDC2452F6F90541A959971 /* Pods_MogroChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MogroChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F163ACA433AA22524AFDAD58 /* Pods-MogroChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MogroChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-MogroChat/Pods-MogroChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8C00891CF5CAC5E7A87568 /* Pods_MogroChat.framework in Frameworks */,
+				1EAB02686E98406DA25BC733 /* Pods_MogroChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +51,8 @@
 			children = (
 				16A6C58F1ED35D2B00CFA1D9 /* MogroChat */,
 				16A6C58E1ED35D2B00CFA1D9 /* Products */,
-				48A134C85FC3673C76A6BDEA /* Pods */,
-				F17F1A33CAF5D67D2070CB52 /* Frameworks */,
+				7D59C2967847DE897B152156 /* Pods */,
+				8F3D6FB0CE23A46D7CE0482A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,19 +80,19 @@
 			path = MogroChat;
 			sourceTree = "<group>";
 		};
-		48A134C85FC3673C76A6BDEA /* Pods */ = {
+		7D59C2967847DE897B152156 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5B6BEE4EC31C639CB86175DA /* Pods-MogroChat.debug.xcconfig */,
-				4AD0B45FA19546F3784C49AB /* Pods-MogroChat.release.xcconfig */,
+				572BF5453562D0E8072EA4DA /* Pods-MogroChat.debug.xcconfig */,
+				F163ACA433AA22524AFDAD58 /* Pods-MogroChat.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F17F1A33CAF5D67D2070CB52 /* Frameworks */ = {
+		8F3D6FB0CE23A46D7CE0482A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				12E8F1A525A62AA64F3D2032 /* Pods_MogroChat.framework */,
+				92BDC2452F6F90541A959971 /* Pods_MogroChat.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,12 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16A6C59F1ED35D2B00CFA1D9 /* Build configuration list for PBXNativeTarget "MogroChat" */;
 			buildPhases = (
-				192A0FFF401584C1F8ACD1A4 /* Check Pods Manifest.lock */,
+				6559FCD9A8C6DF57A8C1D16A /* [CP] Check Pods Manifest.lock */,
 				16A6C5891ED35D2B00CFA1D9 /* Sources */,
 				16A6C58A1ED35D2B00CFA1D9 /* Frameworks */,
 				16A6C58B1ED35D2B00CFA1D9 /* Resources */,
-				2210F97BD96253D5D07F11FF /* Embed Pods Frameworks */,
-				FB116A37EFEC3694B7F13D11 /* Copy Pods Resources */,
+				2CB661B5CEA3DA6040C1CEDB /* [CP] Embed Pods Frameworks */,
+				438103ADFD465311F8FA36D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,29 +170,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		192A0FFF401584C1F8ACD1A4 /* Check Pods Manifest.lock */ = {
+		2CB661B5CEA3DA6040C1CEDB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2210F97BD96253D5D07F11FF /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,19 +185,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MogroChat/Pods-MogroChat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB116A37EFEC3694B7F13D11 /* Copy Pods Resources */ = {
+		438103ADFD465311F8FA36D1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MogroChat/Pods-MogroChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6559FCD9A8C6DF57A8C1D16A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -344,7 +344,7 @@
 		};
 		16A6C5A01ED35D2B00CFA1D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B6BEE4EC31C639CB86175DA /* Pods-MogroChat.debug.xcconfig */;
+			baseConfigurationReference = 572BF5453562D0E8072EA4DA /* Pods-MogroChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UZ8Z6MM7C2;
@@ -358,7 +358,7 @@
 		};
 		16A6C5A11ED35D2B00CFA1D9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4AD0B45FA19546F3784C49AB /* Pods-MogroChat.release.xcconfig */;
+			baseConfigurationReference = F163ACA433AA22524AFDAD58 /* Pods-MogroChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UZ8Z6MM7C2;

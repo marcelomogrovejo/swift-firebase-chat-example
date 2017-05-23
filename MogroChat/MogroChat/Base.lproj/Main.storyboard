@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1hd-D1-p8n">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1hd-D1-p8n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UyQ-Lf-TNV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UyQ-Lf-TNV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqJ-nf-4Nn">
@@ -40,9 +39,12 @@
                                     <action selector="anonymouslyLogIn:" destination="1hd-D1-p8n" eventType="touchUpInside" id="Pzm-lW-as6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aym-8h-HI6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aym-8h-HI6">
                                 <rect key="frame" x="171" y="311" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Xcn-Ig-iSD"/>
+                                    <constraint firstAttribute="width" constant="32" id="uB3-qK-uAX"/>
+                                </constraints>
                                 <state key="normal" image="GoogleButton"/>
                                 <connections>
                                     <action selector="googleLogIn:" destination="1hd-D1-p8n" eventType="touchUpInside" id="ZdC-tq-QmN"/>
@@ -57,8 +59,14 @@
                             </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="aym-8h-HI6" firstAttribute="top" secondItem="HIt-2l-egb" secondAttribute="bottom" constant="8" id="00y-CY-1f0"/>
+                            <constraint firstItem="UyQ-Lf-TNV" firstAttribute="top" secondItem="tWO-0l-QoC" secondAttribute="top" id="2np-c1-HOM"/>
                             <constraint firstItem="HIt-2l-egb" firstAttribute="centerY" secondItem="tWO-0l-QoC" secondAttribute="centerY" constant="-42.5" id="Fcf-5S-abO"/>
+                            <constraint firstAttribute="trailing" secondItem="UyQ-Lf-TNV" secondAttribute="trailing" id="Ouh-Ua-iRA"/>
+                            <constraint firstItem="UyQ-Lf-TNV" firstAttribute="leading" secondItem="tWO-0l-QoC" secondAttribute="leading" id="Pxx-oj-MqJ"/>
+                            <constraint firstItem="uJa-46-JSk" firstAttribute="top" secondItem="UyQ-Lf-TNV" secondAttribute="bottom" id="U9T-wG-HaA"/>
                             <constraint firstItem="HIt-2l-egb" firstAttribute="centerX" secondItem="tWO-0l-QoC" secondAttribute="centerX" id="eAs-RF-ZD1"/>
+                            <constraint firstItem="aym-8h-HI6" firstAttribute="centerX" secondItem="tWO-0l-QoC" secondAttribute="centerX" id="hlW-dg-RhM"/>
                             <constraint firstItem="HIt-2l-egb" firstAttribute="top" secondItem="IqJ-nf-4Nn" secondAttribute="bottom" constant="18" id="oaj-4e-SAX"/>
                             <constraint firstItem="IqJ-nf-4Nn" firstAttribute="centerX" secondItem="tWO-0l-QoC" secondAttribute="centerX" id="shL-BY-x1v"/>
                         </constraints>
@@ -100,7 +108,7 @@
         <!--Navigation Controller-->
         <scene sceneID="NvA-qq-xec">
             <objects>
-                <navigationController storyboardIdentifier="NavitationVC" automaticallyAdjustsScrollViewInsets="NO" id="XUO-nx-JDe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="XUO-nx-JDe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pbM-NC-hDb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
