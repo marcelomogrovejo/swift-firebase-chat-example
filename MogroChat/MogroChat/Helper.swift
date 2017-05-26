@@ -29,7 +29,12 @@ class Helper {
             if error == nil {
                 print("user: \(anonymousUser!.uid)")
 
-                self.appDelegate.window?.rootViewController = self.getRootViewController(viewControllerIdentifier: "NavigationVC")
+                if let user = anonymousUser {
+                    let newUser = FIRDatabase.database().reference().child("users").child(user.uid)
+                    newUser.setValue(["displayName": "anonymous", "id": user.uid, "photoUrl": ""])
+                }
+                
+                self.switchToNavigationViewController()
                 
             } else {
                 print(error!.localizedDescription)
@@ -48,21 +53,28 @@ class Helper {
                 print(error!.localizedDescription)
                 return
             } else {
-                
-                if let email = googleUser?.email {
-                    print(email)
+                if let user = googleUser {
+                    let newUser = FIRDatabase.database().reference().child("users").child(user.uid)
+                    newUser.setValue(["displayName": "\(user.displayName!)", "id": "\(user.uid)", "photoUrl": "\(user.photoURL!)"])
                 }
                 
-                if let displayName = googleUser?.displayName {
-                    print(displayName)
-                }
-                
-                self.appDelegate.window?.rootViewController = self.getRootViewController(viewControllerIdentifier: "NavigationVC")
+                self.switchToNavigationViewController()
             }
         })
     }
     
+    func switchToNavigationViewController() {
+        self.appDelegate.window?.rootViewController = self.getRootViewController(viewControllerIdentifier: "NavigationVC")
+    }
+    
     func logOut() {
+        
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch let error {
+            print(error)
+        }
+        
         let logInViewController = storyboard.instantiateViewController(withIdentifier: "LogInVC") as! LogInViewController
         appDelegate.window?.rootViewController = logInViewController
     }
